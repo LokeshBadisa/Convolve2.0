@@ -29,8 +29,8 @@ numerical_cols = df_test.select_dtypes(include=['int', 'float']).columns
 imputer = SimpleImputer(strategy='mean')
 df_test[numerical_cols] = imputer.fit_transform(df_test[numerical_cols])
 
-y_test = df['Target']
-X_test = df.drop('Target', axis=1)
+y_test = df_test['Target']
+X_test = df_test.drop('Target', axis=1)
 numerical_cols = numerical_cols[1:]
 
 scaler = StandardScaler()
